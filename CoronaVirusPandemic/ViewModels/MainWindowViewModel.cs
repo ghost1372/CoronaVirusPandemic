@@ -50,7 +50,6 @@ namespace CoronaVirusPandemic.ViewModels
             LoadDataCommand = new DelegateCommand(LoadData);
             LoadData();
             ItemsView.Filter = new Predicate<object>(o => Filter(o as CoronavirusCountry));
-
         }
         private bool Filter(CoronavirusCountry item)
         {

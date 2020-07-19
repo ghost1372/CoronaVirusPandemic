@@ -5,11 +5,11 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>CoronaVirusPandemic</AssemblyName>
     <RootNamespace>CoronaVirusPandemic</RootNamespace>
-    <Version>1.0.0.0</Version>
+    <Version>1.1.0.0</Version>
     <Configurations>Debug;Release</Configurations>
     <Copyright>Copyright © Mahdi 2018-2020</Copyright>
-    <FileVersion>1.0.0.0</FileVersion>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <LangVersion>latest</LangVersion>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <Authors>Mahdi Hosseini</Authors>
@@ -26,7 +26,7 @@
     <None Remove="Resources\cloud.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="HandyControls" Version="2.4.9.2" />
+    <PackageReference Include="HandyControls" Version="2.5.3.2" />
     <PackageReference Include="Prism.DryIoc" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
