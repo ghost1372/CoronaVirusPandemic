@@ -18,8 +18,8 @@ jobs:
     - name: Set up NuGet
       run: |
          nuget sources add -name MyNuGetSource -source https://pkgs.dev.azure.com/dotnet/CommunityToolkit/_packaging/CommunityToolkit-Labs/nuget/v3/index.json
-      
-    - name: Get TvTime Version
+         nuget sources add -name MainLabs -source https://pkgs.dev.azure.com/dotnet/CommunityToolkit/_packaging/CommunityToolkit-MainLatest/nuget/v3/index.json
+    - name: Get Version
       uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
       id: get-version
       with:
@@ -33,7 +33,7 @@ jobs:
       with:
         files: ${{ env.DIR_PATH }}
         recursive: true
-        dest: publish/TvTime-v${{steps.get-version.outputs.version-prefix}}.zip
+        dest: publish/CoronaVirus-v${{steps.get-version.outputs.version-prefix}}.zip
   
     - name: Create Github Release
       uses: actions/create-release@v1.1.4
@@ -49,7 +49,7 @@ jobs:
       uses: csexton/release-asset-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        file: publish/TvTime-v${{steps.get-version.outputs.version-prefix}}.zip
+        file: publish/CoronaVirus-v${{steps.get-version.outputs.version-prefix}}.zip
         release-url: ${{ steps.create_release.outputs.upload_url }}
         
   changelog:
@@ -60,7 +60,7 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Get TvTime Version
+    - name: Get Version
       uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
       id: get-version
       with:
