@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CoronaVirusPandemic (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CoronaVirusPandemic (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

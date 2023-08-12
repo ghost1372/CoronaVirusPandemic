@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application x:Class="CoronaVirusPandemic.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converter="using:CommunityToolkit.WinUI.UI.Converters"
+             xmlns:local="using:CoronaVirusPandemic"
+             xmlns:wuc="using:WinUICommunity">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <ResourceDictionary Source="ms-appx:///WinUICommunity.Components/Themes/Generic.xaml" />
+                <ResourceDictionary Source="ms-appx:///WinUICommunity.LandingPages/Themes/Generic.xaml" />
+                <wuc:ItemTemplates />
+            </ResourceDictionary.MergedDictionaries>
+            <converter:BoolNegationConverter x:Key="BoolNegationConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

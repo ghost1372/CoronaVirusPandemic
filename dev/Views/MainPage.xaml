@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page x:Class="CoronaVirusPandemic.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:CoronaVirusPandemic"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:models="using:CoronaVirusPandemic.Models"
+      xmlns:wuc="using:WinUICommunity"
+      x:DefaultBindMode="OneWay"
+      mc:Ignorable="d">
+    <Page.Resources>
+        <x:Double x:Key="TitleBarCompactHeight">48</x:Double>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <wuc:TitleBar x:Name="appTitleBar"
+                      Title="{x:Bind local:App.Current.AppName}"
+                      Subtitle="{x:Bind local:App.Current.AppVersion}">
+            <wuc:TitleBar.Icon>
+                <BitmapIcon ShowAsMonochrome="False"
+                            UriSource="ms-appx:///Assets/icon.png" />
+            </wuc:TitleBar.Icon>
+            <wuc:TitleBar.Content>
+                <AutoSuggestBox x:Name="txtSearch"
+                                PlaceholderText="Search"
+                                QueryIcon="Find"
+                                TextChanged="AutoSuggestBox_TextChanged" />
+            </wuc:TitleBar.Content>
+        </wuc:TitleBar>
+        <InfoBar Title="{x:Bind ViewModel.TitleStatus}"
+                 Grid.Row="1"
+                 CornerRadius="6,6,0,0"
+                 IsClosable="False"
+                 IsOpen="True"
+                 Message="{x:Bind ViewModel.MessageStatus}"
+                 Severity="Informational">
+            <InfoBar.ActionButton>
+                <Button Command="{x:Bind ViewModel.RefreshCommand}"
+                        Content="Refresh"
+                        IsEnabled="{x:Bind ViewModel.IsActive, Converter={StaticResource BoolNegationConverter}}" />
+            </InfoBar.ActionButton>
+        </InfoBar>
+        <ListView Grid.Row="2"
+                  ItemsSource="{x:Bind ViewModel.DataACV}">
+            <ListView.Header>
+                <controls:DataTable Margin="12,0,0,0">
+                    <controls:DataColumn MinWidth="120" />
+                    <controls:DataColumn MinWidth="160"
+                                         CanResize="True">
+                        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Text="Country" />
+                    </controls:DataColumn>
+
+                    <controls:DataColumn MinWidth="120"
+                                         CanResize="True">
+                        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Text="Case" />
+
+                    </controls:DataColumn>
+
+                    <controls:DataColumn MinWidth="50"
+                                         CanResize="True">
+                        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Text="Deaths" />
+
+                    </controls:DataColumn>
+
+                    <controls:DataColumn MinWidth="120"
+                                         CanResize="True">
+                        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Text="Today Deaths" />
+
+                    </controls:DataColumn>
+
+                    <controls:DataColumn MinWidth="160"
+                                         CanResize="True">
+                        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Text="Today Cases" />
+
+                    </controls:DataColumn>
+
+                    <controls:DataColumn MinWidth="140"
+                                         CanResize="True">
+                        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Text="Recovered" />
+
+                    </controls:DataColumn>
+
+                    <controls:DataColumn MinWidth="120"
+                                         CanResize="True">
+                        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Text="Active" />
+
+                    </controls:DataColumn>
+
+                    <controls:DataColumn MinWidth="140"
+                                         CanResize="True">
+                        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Text="Critical" />
+                    </controls:DataColumn>
+                </controls:DataTable>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:CoronavirusCountry">
+                    <controls:DataRow>
+                        <wuc:ImageEx Width="64"
+                                     Height="64"
+                                     Source="{x:Bind FlagUri}"
+                                     Stretch="Uniform" />
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{x:Bind CountryName}" />
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{x:Bind CaseCount}" />
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{x:Bind DeathsCount}" />
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{x:Bind TodayDeathsCount}" />
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{x:Bind TodayCasesCount}" />
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{x:Bind RecoveredCount}" />
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{x:Bind ActiveCount}" />
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{x:Bind CriticalCount}" />
+                    </controls:DataRow>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style BasedOn="{StaticResource DefaultListViewItemStyle}"
+                       TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <ProgressRing Grid.Row="2"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      IsActive="{x:Bind ViewModel.IsActive}" />
+    </Grid>
+</Page>
+

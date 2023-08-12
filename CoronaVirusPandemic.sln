@@ -1,25 +1,52 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29926.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoronaVirusPandemic", "CoronaVirusPandemic\CoronaVirusPandemic.csproj", "{DD03C9CE-F2CE-4701-A0E0-0167AD1AA33F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoronaVirusPandemic", "dev\CoronaVirusPandemic.csproj", "{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBD9459E-07A2-4B37-B32D-E03243353E5B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DD03C9CE-F2CE-4701-A0E0-0167AD1AA33F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD03C9CE-F2CE-4701-A0E0-0167AD1AA33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD03C9CE-F2CE-4701-A0E0-0167AD1AA33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD03C9CE-F2CE-4701-A0E0-0167AD1AA33F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|ARM64.Build.0 = Debug|ARM64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|x64.ActiveCfg = Debug|x64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|x64.Build.0 = Debug|x64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|x64.Deploy.0 = Debug|x64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|x86.ActiveCfg = Debug|x86
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|x86.Build.0 = Debug|x86
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Debug|x86.Deploy.0 = Debug|x86
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|ARM64.ActiveCfg = Release|ARM64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|ARM64.Build.0 = Release|ARM64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|ARM64.Deploy.0 = Release|ARM64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|x64.ActiveCfg = Release|x64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|x64.Build.0 = Release|x64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|x64.Deploy.0 = Release|x64
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|x86.ActiveCfg = Release|x86
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|x86.Build.0 = Release|x86
+		{9AD445BB-463D-4ED3-A3B8-4C681B347A1F}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {08408D39-6C19-4B36-ABE7-18D1375D68BF}
+		SolutionGuid = {E5ABCB67-BD3B-45D8-8834-5FA2D7965DCE}
 	EndGlobalSection
 EndGlobal
